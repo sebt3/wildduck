@@ -12,8 +12,8 @@ jobs:
     - name: Get versions
       id: version
       run: |
-        echo "major=$(awk -F, '{print $2}' ./rspamd/.tags)" >> $GITHUB_OUTPUT
-        echo "full=$(awk -F, '{print $1}' ./rspamd/.tags)" >> $GITHUB_OUTPUT
+        echo "major=$(awk -F, '{print $2}' ./zonemta/.tags)" >> $GITHUB_OUTPUT
+        echo "full=$(awk -F, '{print $1}' ./zonemta/.tags)" >> $GITHUB_OUTPUT
 
     - name: Docker Setup qemu-action
       uses: docker/setup-qemu-action@v2
@@ -28,8 +28,8 @@ jobs:
     - name: Build the Docker image
       uses: docker/build-push-action@v3
       with:
-        context: ./rspamd
-        file: ./Dockerfile
+        context: ./zonemta
+        file: ./zonemta/Dockerfile
         platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
         build-args: |
           version=${{ steps.version.outputs.full }}
