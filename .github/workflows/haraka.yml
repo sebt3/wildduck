@@ -12,9 +12,6 @@ jobs:
     - name: Get versions
       id: version
       run: |
-        pwd
-        echo $GITHUB_WORKSPACE
-        find $GITHUB_WORKSPACE
         echo "major=$(awk -F, '{print $2}' $GITHUB_WORKSPACE/haraka/.tags)" >> $GITHUB_OUTPUT
         echo "full=$(awk -F, '{print $1}' $GITHUB_WORKSPACE/haraka/.tags)" >> $GITHUB_OUTPUT
 

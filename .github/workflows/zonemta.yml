@@ -12,8 +12,8 @@ jobs:
     - name: Get versions
       id: version
       run: |
-        echo "major=$(awk -F, '{print $2}' ./zonemta/.tags)" >> $GITHUB_OUTPUT
-        echo "full=$(awk -F, '{print $1}' ./zonemta/.tags)" >> $GITHUB_OUTPUT
+        echo "major=$(awk -F, '{print $2}' $GITHUB_WORKSPACE/zonemta/.tags)" >> $GITHUB_OUTPUT
+        echo "full=$(awk -F, '{print $1}' $GITHUB_WORKSPACE/zonemta/.tags)" >> $GITHUB_OUTPUT
 
     - name: Docker Setup qemu-action
       uses: docker/setup-qemu-action@v2

@@ -1,6 +1,6 @@
 FROM node:lts-alpine as builder
 ARG version=3.4.0
-RUN apk add --no-cache git python make g++
+RUN apk add --no-cache git python3 make g++
 WORKDIR /app
 RUN git clone https://github.com/zone-eu/zone-mta-template ./
 RUN npm install zone-mta@${version}
