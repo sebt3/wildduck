@@ -35,6 +35,6 @@ jobs:
           version=${{ steps.version.outputs.full }}
         push: true
         tags: |
-          ${{ github.repository }}:latest
-          ${{ github.repository }}:${{ steps.version.outputs.full }}
-          ${{ github.repository }}:${{ steps.version.outputs.major }}
+          ${{ github.repository }}-haraka:latest
+          ${{ github.repository }}-haraka:${{ steps.version.outputs.full }}
+          ${{ github.repository }}-haraka:${{ steps.version.outputs.major }}
