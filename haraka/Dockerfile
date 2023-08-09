@@ -3,7 +3,7 @@ ARG version=3.0.2
 ARG plugin_version=1.37.9
 RUN apk add --no-cache git python3 make g++
 WORKDIR /app
-RUN git clone --depth 1 --branch ${version} https://github.com/haraka/Haraka.git ./
+RUN git clone --depth 1 --branch v${version} https://github.com/haraka/Haraka.git ./
 RUN npm install --production
 RUN npm install haraka-plugin-wildduck@${plugin_version}
 
