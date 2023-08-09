@@ -4,7 +4,7 @@ ARG plugin_version=1.37.9
 ARG config_version=setup-v1.0.2
 RUN apk add --no-cache git python3 make g++
 WORKDIR /config
-RUN git clone --depth 1 --branch v${config_version} https://github.com/nodemailer/wildduck-dockerized.git ./
+RUN git clone --depth 1 --branch ${config_version} https://github.com/nodemailer/wildduck-dockerized.git ./
 WORKDIR /app
 RUN git clone --depth 1 --branch v${version} https://github.com/haraka/Haraka.git ./
 RUN npm install --production
