@@ -13,7 +13,7 @@ RUN rm -rf .git config && mkdir -p config && cp -Rapvf /config/default-config/ha
 
 FROM node:lts-alpine as app
 ENV NODE_ENV production
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini openssl
 WORKDIR /app
 COPY --from=builder /app /app
 ENTRYPOINT ["/sbin/tini", "--", "node", "haraka.js"]
