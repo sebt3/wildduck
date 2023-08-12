@@ -6,7 +6,7 @@ USER root
 RUN apk add --no-cache git python3 make g++ openssl
 USER node
 WORKDIR ${APP_PATH}
-RUN git clone --depth 1 --branch ${version} https://github.com/nodemailer/wildduck-webmail.git ./
+RUN git clone --depth 1 --branch v${version} https://github.com/nodemailer/wildduck-webmail.git ./
 RUN rm -rf .git Dockerfile README.md .github
 RUN npm install && npm run bowerdeps
 
